@@ -1,5 +1,6 @@
 <?php
 
+// Genera clase padre
 class Computer
 {
     public string $cpu;
@@ -13,15 +14,17 @@ class Computer
     }
 }
 
+// Genera clase que consume clase padre
 class ComputerBuilder
 {
+    // Generamos variable de tipo de la clase padre para acceder a sus propiedades
     private Computer $computer;
 
     public function __construct()
     {
         $this->computer = new Computer();
     }
-
+    
     public function setCpu(string $cpu) : static
     {
         $this->computer->cpu = $cpu;
